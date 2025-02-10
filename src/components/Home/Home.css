@@ -1,0 +1,161 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #167ee6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Dog List */
+.dog-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Dog Card */
+.dog-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    background-color: #110d0d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.dog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dog Image */
+.dog-image {
+    width: 100%;
+    max-width: 200px !important; 
+    max-height: 150px !important; 
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Form Styling */
+form {
+    background: #0b0b0b;
+    padding: 40px;
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/* Form Input Fields */
+form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Buttons */
+button {
+    background-color: #044182;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Edit & Delete Button Styling */
+button:nth-child(2) {
+    background-color: #28a745;
+}
+
+button:nth-child(2):hover {
+    background-color: #218838;
+}
+
+button:nth-child(3) {
+    background-color: #dc3545;
+}
+
+button:nth-child(3):hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    .dog-list {
+        gap: 15px;
+    }
+    .dog-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    form {
+        width: 100%;
+    }
+    /* Adjust image size for smaller screens */
+    .dog-image {
+        max-width: 180px;
+        max-height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 15px;
+    }
+    form {
+        padding: 20px;
+    }
+    button {
+        padding: 10px 15px;
+    }
+    /* Adjust image size for very small screens */
+    .dog-image {
+        max-width: 150px;
+        max-height: 120px;
+    }
+}
