@@ -15,7 +15,7 @@ function Home() {
   // Fetching dogs from the server
   const fetchDogs = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/dogs');
+      const response = await axios.get('http://dogs-application.herokuapp.com/dogs');
       setDogs(response.data); 
     } catch (err) {
       console.error('Error fetching dogs:', err);
@@ -45,11 +45,11 @@ function Home() {
   
     if (editingId) {
       // Update existing dog
-      await axios.put(`http://localhost:3000/dogs/${editingId}`, dogData);
+      await axios.put(`http://dogs-application.herokuapp.com/dogs${editingId}`, dogData);
       setEditingId(null);
     } else {
       // Add new dog
-      await axios.post('http://localhost:3000/dogs', dogData);
+      await axios.post('http://dogs-application.herokuapp.com/dogs', dogData);
     }
   
     // Reseting the form after submission
@@ -75,7 +75,7 @@ function Home() {
   // Delete Pet
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/dogs/${id}`);
+      await axios.delete(`http://dogs-application.herokuapp.com/dogs${id}`);
       setDogs(dogs.filter((dog) => dog._id !== id)); 
     } catch (error) {
       console.error("Error deleting dog:", error);
@@ -97,10 +97,10 @@ function Home() {
      
       <p>USER FAVORITES</p>
 
-      {/* 🟢 Pet List */}
+      
       <DogList dogs={dogs} handleEdit={handleEdit} handleDelete={handleDelete} />
 
-      {/* 🟢 Go Back Button */}
+     
       <button onClick={handleGoBack}>Go back to main page</button>
     </div>
   );
